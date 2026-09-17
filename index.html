@@ -10,8 +10,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a href="javascript:history.back()" class="back-btn" title="Voltar">
+      <span>←</span> VOLTAR
+    </a>
     <header class="hero">
       <h1>The Lab</h1>
+      <img src="imagens/The Lab.jpg" alt="The Lab" class="hero__img">
       <h2>Onde o desastre se originou</h2>
       <hr>
     </header>
@@ -39,7 +43,37 @@
           <p>Revise registros secretos, relatórios e evidências da queda da instalação.</p>
         </div>
       </a>
+
+      <a href="#" class="nav-card nav-card--lore">
+        <div class="nav-card__image" aria-hidden="true"></div>
+        <div class="nav-card__content">
+          <span class="nav-card__label"><h3>Lore</h3></span>
+          <p>Descubra a história oculta e os segredos que levaram ao colapso do projeto.</p>
+        </div>
+      </a>
     </main>
+
+    <div class="info-wrapper">
+      <section class="info-section about-section">
+        <div class="info-container">
+          <h2>Sobre o Jogo</h2>
+          <p>The Lab é uma experiência imersiva de ficção científica onde você explora os restos de uma instalação de pesquisa abandonada. Enfrente criaturas mutantes, descubra segredos ocultos e desvendar os mistérios do que realmente aconteceu neste lugar esquecido.</p>
+          <p>Desenvolvido com atenção aos detalhes e à narrativa, o jogo oferece um mundo profundo cheio de história, personagens complexos e uma atmosfera que te mantém na beira do assento.</p>
+        </div>
+      </section>
+
+      <section class="info-section updates-section">
+        <div class="info-container">
+          <h2>Atualizações Recentes</h2>
+          <ul class="updates-list">
+            <li><strong>Versão 1.2.0:</strong> Novo sistema de combate e 5 novos inimigos adicionados.</li>
+            <li><strong>Versão 1.1.5:</strong> Corrigidos bugs de física e melhorada a otimização de performance.</li>
+            <li><strong>Versão 1.1.0:</strong> Área do Setor 3 e 8 novos personagens desbloqueados.</li>
+            <li><strong>Versão 1.0.0:</strong> Lançamento oficial do jogo com campanha completa.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
     <script src="script.js"></script>
   </body>
