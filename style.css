@@ -1,13 +1,35 @@
-.back-btn {
+.top-actions {
   position: fixed;
   top: 24px;
   left: 24px;
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  font-size: 0.85rem;
+  gap: 12px;
+}
+
+.top-user-actions {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-btn,
+.search-btn,
+.menu-btn,
+.settings-btn,
+.account-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 1.4rem;
   font-family: 'Turret Road', sans-serif;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -23,17 +45,58 @@
   box-shadow: 0 0 12px rgba(124, 231, 255, 0.2);
 }
 
-.back-btn:hover {
+.back-btn:hover,
+.search-btn:hover,
+.menu-btn:hover,
+.settings-btn:hover,
+.account-btn:hover {
   color: #f4fbff;
   border-color: rgba(124, 231, 255, 0.9);
   background: rgba(4, 12, 20, 0.72);
   box-shadow: 0 0 18px rgba(124, 231, 255, 0.4), 0 0 8px rgba(94, 168, 255, 0.3);
-  transform: translateX(-3px);
+  transform: translateY(-2px);
+}
+
+.back-btn span,
+.search-btn span,
+.menu-btn span,
+.settings-btn span,
+.account-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.2em;
+  line-height: 1;
+  font-weight: 700;
 }
 
 .back-btn span {
+  font-size: 1.5em;
+}
+
+.search-btn span {
+  font-size: 1.35em;
+}
+
+.menu-btn span {
   font-size: 1.2em;
-  font-weight: 700;
+  position: relative;
+  top: 1.5px;
+}
+
+.settings-btn span {
+  font-size: 1.35em;
+  position: relative;
+  top: 1.5px;
+}
+
+.account-btn svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: currentColor;
 }
 
 :root {
@@ -187,7 +250,7 @@ body::before {
 }
 
 .nav-card__label {
-  display: inline-block;
+  display: block;
   margin-bottom: 10px;
   font-size: 0.72rem;
   letter-spacing: 0.18rem;
@@ -195,24 +258,30 @@ body::before {
   color: var(--cyan);
 }
 
+.nav-card__label h3 {
+  margin: 0;
+}
+
 .nav-card h3 {
   margin: 0 0 10px;
-  font-size: clamp(1.8rem, 2vw, 2.4rem);
+  font-size: clamp(1.3rem, 2vw, 2.4rem);
   font-family: 'Megrim', cursive;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .nav-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 1rem;
 }
 
 .info-section {
   flex: 1;
   min-width: 0;
+  display: flex;
 }
 
 .info-wrapper {
@@ -221,10 +290,13 @@ body::before {
   padding: 0 24px;
   display: flex;
   gap: 28px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(180deg, rgba(11, 22, 31, 0.85), rgba(8, 15, 20, 0.92));
   border: 1px solid rgba(124, 231, 255, 0.35);
   border-radius: 16px;
@@ -234,7 +306,7 @@ body::before {
 
 .info-container h2 {
   margin: 0 0 20px;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(1.4rem, 2.2vw, 2.2rem);
   font-family: 'Megrim', cursive;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -245,8 +317,8 @@ body::before {
 .info-container p {
   margin: 0 0 16px;
   color: var(--muted);
-  line-height: 1.8;
-  font-size: 1rem;
+  line-height: 1.7;
+  font-size: 0.92rem;
 }
 
 .info-container p:last-child {
@@ -284,12 +356,17 @@ hr {
 
 @media (max-width: 900px) {
   .cards-wrap {
-    grid-template-columns: 1fr;
-    max-width: 560px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 760px;
   }
 
   .nav-card {
     min-height: 420px;
+  }
+
+  .nav-card h3 {
+    font-size: clamp(1.05rem, 4vw, 1.8rem);
+    letter-spacing: 0.05em;
   }
 
   .info-container {
@@ -311,8 +388,34 @@ hr {
     letter-spacing: 0.12rem;
   }
 
+  .nav-card {
+    min-height: 300px;
+  }
+
+  .nav-card__image {
+    height: 150px;
+  }
+
+  .nav-card__label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.6rem;
+    letter-spacing: 0.12rem;
+  }
+
+  .nav-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+
   .nav-card__content {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 14px 12px 18px;
+  }
+
+  .nav-card p {
+    font-size: 0.78rem;
+    line-height: 1.45;
   }
 }

@@ -10,9 +10,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <a href="javascript:history.back()" class="back-btn" title="Voltar">
-      <span>←</span> VOLTAR
-    </a>
+    <div class="top-actions">
+      <a href="javascript:history.back()" class="back-btn" title="Voltar" aria-label="Voltar">
+        <span>⌂</span>
+      </a>
+      <button class="search-btn" type="button" aria-label="Pesquisar">
+        <span>⌕</span>
+      </button>
+      <button class="menu-btn" type="button" aria-label="Menu">
+        <span>☰</span>
+      </button>
+    </div>
+
+    <div class="top-user-actions">
+      <button class="settings-btn" type="button" aria-label="Configurações">
+        <span>⚙</span>
+      </button>
+      <button class="account-btn" type="button" aria-label="Conta">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/>
+        </svg>
+      </button>
+    </div>
     <header class="hero">
       <h1>The Lab</h1>
       <img src="imagens/The Lab.jpg" alt="The Lab" class="hero__img">
@@ -23,7 +42,7 @@
       <a href="#" class="nav-card nav-card--characters">
         <div class="nav-card__image" aria-hidden="true"></div>
         <div class="nav-card__content">
-          <span class="nav-card__label"><h3>Personagens</h3></span>
+          <div class="nav-card__label"><h3>Personagens</h3></div>
           <p>Conheça os sobreviventes, guerreiros e cientistas que restaram no laboratório.</p>
         </div>
       </a>
@@ -31,7 +50,7 @@
       <a href="#" class="nav-card nav-card--enemies">
         <div class="nav-card__image" aria-hidden="true"></div>
         <div class="nav-card__content">
-          <span class="nav-card__label"><h3>Inimigos</h3></span>
+          <div class="nav-card__label"><h3>Inimigos</h3></div>
           <p>Descubra as criaturas, máquinas e forças mutantes que vigiam cada corredor.</p>
         </div>
       </a>
@@ -39,7 +58,7 @@
       <a href="#" class="nav-card nav-card--documents">
         <div class="nav-card__image" aria-hidden="true"></div>
         <div class="nav-card__content">
-          <span class="nav-card__label"><h3>Documentos</h3></span>
+          <div class="nav-card__label"><h3>Documentos</h3></div>
           <p>Revise registros secretos, relatórios e evidências da queda da instalação.</p>
         </div>
       </a>
@@ -47,7 +66,7 @@
       <a href="#" class="nav-card nav-card--lore">
         <div class="nav-card__image" aria-hidden="true"></div>
         <div class="nav-card__content">
-          <span class="nav-card__label"><h3>Lore</h3></span>
+          <div class="nav-card__label"><h3>Lore</h3></div>
           <p>Descubra a história oculta e os segredos que levaram ao colapso do projeto.</p>
         </div>
       </a>
