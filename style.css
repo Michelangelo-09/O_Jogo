@@ -275,6 +275,13 @@ body::before {
   color: var(--cyan);
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(124, 231, 255, 0.6), transparent);
+  margin: 30px 0;
+}
+
 @media (max-width: 900px) {
   .cards-wrap {
     grid-template-columns: 1fr;
